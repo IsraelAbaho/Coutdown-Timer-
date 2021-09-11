@@ -1,0 +1,97 @@
+// mixin media query syntax
+@mixin breakpoint($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header{
+  position: relative;
+  background: url(./img/img6.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+
+  &::after{
+    position: absolute;
+    background: rgba(0,0,0, 0.801);
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+
+  .container{
+    color: #fff;
+    z-index: 1;
+
+    h2{
+      font-size: 2rem;
+
+      @include breakpoint(560px){
+        font-size:3rem ;
+      }
+      @include breakpoint(768px){
+        font-size:3.5rem ;
+      }
+      @include breakpoint(960px){
+        font-size:4rem ;
+      }
+      span{
+        color: yellow;
+      }
+    }
+
+    h1{
+      font-size: 3rem;
+     line-height: 4rem;
+     padding: 1rem 0;
+     font-weight: 800;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+
+     @include breakpoint(560px){
+      font-size:4rem ;
+    }
+    @include breakpoint(768px){
+      font-size:4.5rem ;
+    }
+    @include breakpoint(960px){
+      font-size:5rem ;
+    }
+    }
+.countDown{
+  font-size: 2rem;
+
+  @include breakpoint(560px){
+    font-size:3rem ;
+  }
+  @include breakpoint(768px){
+    font-size:3.5rem ;
+  }
+  @include breakpoint(960px){
+    font-size:4rem ;
+    margin-top: 1.5rem;
+  }
+}
+    
+  }
+}
+
